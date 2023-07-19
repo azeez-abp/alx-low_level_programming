@@ -8,3 +8,9 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c);
+/**
+ * print_alphabet - Entry point
+ * Return:0
+ */
+
+void print_alphabet(void);
