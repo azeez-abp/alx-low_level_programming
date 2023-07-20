@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
  * _isupper - check is uppervase
  * @c:the char to check
@@ -18,4 +18,5 @@ int _isupper(int c)
 			return (1);
 		}
 	}
+	return (0);
 }
