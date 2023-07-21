@@ -1,32 +1,40 @@
 #include <stdio.h>
+
 /**
- * main - find the largest prime factor
- * @n: the number to find the largest prime factor of
- *
- * Return: the largest prime factor
+ * biggest - print biggest factor
+ * @n:int
+ * Rerun: void
  */
-int main(int n)
+
+void biggest(long int n)
 {
-        int i;
-	int larg = 0;
+	int i,larg;
+	 if (n <= 1)
+        {
+        }
 
-	if (n <= 1)
-	{
-		return (0);
-	}
 
-	
-	for (int i = 2; i <= n; i++)
-	{
-		while (n % i == 0)
-		{
-			if (i > larg)
-			{
-				larg = i;
-			}
-			n /= i;
-		}
-	}
-	printf("%d\n", larg);
-	return (1);
+        for (i = 2; i <= n; i++)
+        {
+                while (n % i == 0)
+                {
+                        if (i > larg)
+                        {
+                                larg = i;
+                        }
+                        n /= i;
+                }
+        }
+        printf("%d\n", larg);
+}
+
+/**
+ * main - find the largest prime factor 
+ * Return: Always zero 
+ */
+int  main(void)
+{
+
+	 biggest(612852475143);
+	 return (0);
 }
