@@ -6,20 +6,24 @@
  *
  * Return: Always 0.
  */
-
 void print_square(int size)
 {
-	int end;
+        int w;
+        int h;
 
-	if (size > 0)
-	{
-		for (end = 0; end < size; end++)
-		{
-			_putchar('#');
-		}
-	}
-	else
-	{
-		_putchar('\n');
-	}
+        if (size > 0)
+        {
+                for (w = 0; w < size; w++)
+                {
+                        for (h = 0; h < size; h++)
+                        {
+                                _putchar('#');
+                        }
+                        _putchar('\n');
+                }
+        }
+        else
+        {
+                _putchar('\n');
+        }
 }
