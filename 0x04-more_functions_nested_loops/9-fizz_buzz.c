@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "main.h"
 /**
  * main - Entry point
  *
@@ -12,21 +12,13 @@ int main(void)
 	for (start = 1; start <= 100; start++)
 	{
 		if (start % 15 == 0)
-		{
-			printf("FizzBuzz ");
-		}
+			printf(" FizzBuzz");
 		else if (start % 5 == 0)
-		{
-			printf("Buzz ");
-		}
+			printf(" Buzz ");
 		else if (start % 3 == 0)
-		{
-			printf("Fizz ");
-		}
+			printf(" Fizz");
 		else
-		{
-			printf("%d ", start);
-		}
+			printf(" %d", start);
 	}
 	printf("\n");
 	return (0);
