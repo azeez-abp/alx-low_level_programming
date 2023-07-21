@@ -2,7 +2,8 @@
 
 /**
  * print_numbers - print 0 to 9
- * Descroption: none
+ * Description: none
+ * Return:always 0
  */
 void print_numbers(void)
 {
