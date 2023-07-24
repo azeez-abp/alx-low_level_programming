@@ -1,32 +1,48 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
-
 /**
- * main - Generates a random password.
+ * checksum - executes checksum
+ * @s: input char
+ * Return: checksum
+ */
+unsigned long checksum(char *s)
+{
+unsigned long sum = 0;
+while (*s != 0)
+{
+	sum += *s;
+	s++;
+}
+return (sum);
+}
+/**
+ * main - prints password for crakme
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$^&*()@#$%^&";
-	int len = 
-	int rands_loop = 33;
-	char password[33]; /* Allocate space for 10 characters plus the null terminator */
-       
+	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQSTUVWXYZ";
+	char s[33];
+	unsigned long sum;
+	int i, flag = 0;
+
 	srand(time(NULL));
-
-	while (len < rands_loop)
+	while (flag == 0)
 	{
-		int rands = (rand() % strlen(alpha)); /* Corrected the range for rands */
-		password[len] = alpha[rands];
-		len++;
+		for (i = 0; i < 33; i++)
+		{
+			s[i] = alpha[rand() % (sizeof(alpha) - 1)];
+		}
+		s[i] = '\0';
+		sum = checksum(s);
+		if (sum == 2772)
+		{
+			flag = 1;
+			printf("%s", s);
+		}
 	}
-
-	password[len] = '\0'; /* Add the null terminator to make it a valid C string */
-
-	printf(" %s\n", password);
-
-	return (0);
+return (0);
 }
