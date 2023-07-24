@@ -13,8 +13,8 @@ int main(void)
 	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$^&*()@#$%^&";
 	int len = 0;
 	srand(time(NULL));
-	int rands_loop = (rand() % strlen(alpha)) < 8 ? 8 : (rand() % strlen(alpha));
-	char password[11]; /* Allocate space for 10 characters plus the null terminator */
+	int rands_loop = 33;
+	char password[33]; /* Allocate space for 10 characters plus the null terminator */
 
 	while (len < rands_loop)
 	{
@@ -25,7 +25,7 @@ int main(void)
 
 	password[len] = '\0'; /* Add the null terminator to make it a valid C string */
 
-	printf("Random password: %s\n", password);
+	printf(" %s\n", password);
 
 	return (0);
 }
