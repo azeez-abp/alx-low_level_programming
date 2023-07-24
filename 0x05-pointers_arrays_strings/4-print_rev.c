@@ -1,6 +1,6 @@
-#include "holberton.h"
+#include "main.h"
 /**
- * print_rev - minic the stdio version of puts
+ * print_rev -print reverse of str
  * @s: the value to process to the stdout in reverse.
  */
 void print_rev(char *s)
