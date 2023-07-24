@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * _puts - output str 
  * Description: using write function in unistd.h
