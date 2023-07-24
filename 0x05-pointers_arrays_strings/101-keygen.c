@@ -11,10 +11,11 @@
 int main(void)
 {
 	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$^&*()@#$%^&";
-	int len = 0;
-	srand(time(NULL));
+	int len = 
 	int rands_loop = 33;
 	char password[33]; /* Allocate space for 10 characters plus the null terminator */
+       
+	srand(time(NULL));
 
 	while (len < rands_loop)
 	{
