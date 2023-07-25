@@ -15,11 +15,12 @@ int _atoi(char *s)
 		s++;
 	while (*s == '-' || *s == '+')
 	{
-		sign =  -sign;
+		if(*s == '-')
+			sign =  -sign;
 		s++;
 	}
 
-	while (*s >= 0  && *s <= 0)
+	while (*s >= 0  && *s <= 9)
 	{
 		int max  =  INT_MAX - (*s - '0');
 		int max_int = (int) (max / 10);
