@@ -1,36 +1,45 @@
 #include <stdio.h>
 #include <limits.h>
+#include <stdio.h>
+#include <limits.h>
 
 /**
- * _atoi - Extracts an integer from a string.
+ * _atoi - Converts a string to an integer.
  * @s: The string to extract from.
  *
- * Return: The extracted integer.
+ * Return: The integer extracted from the string.
  */
 int _atoi(char *s)
 {
 	int sign = 1;
 	int result = 0;
+	int index = 0;
 
-	while (*s != '\0')
+
+	while (s[index] != '\0')
 	{
-		if (*s == '-')
+		if (s[index] == '-')
 			sign = -sign;
 
-		if (*s >= '0' && *s <= '9')
+		if (s[index] >= '0' && s[index] <= '9')
 		{
-			int max = INT_MAX - (*s - '0');
-			int max_int = (int) (max / 10);
+			printf("%c\n", s[index]);
 
-			if (result > max_int)
-			{
-				return ((sign == 1) ? INT_MAX : INT_MIN);
-			}
-
-			result = (result * 10) + (*s - '0');
+			result = (result * 10) + (s[index] - '0');
 		}
-		s++;
+
+		if ((s[index] >= '0' && s[index] <= '9') &&
+		    ((s[index + 1] >= 'A' && s[index + 1] <= 'Z') ||
+		     s[index + 1] == ' ' ||
+		     (s[index + 1] >= 'a' && s[index + 1] <= 'z')))
+		{
+
+			break;
+		}
+
+		index++;
 	}
 
 	return (result * sign);
 }
+
