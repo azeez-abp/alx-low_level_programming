@@ -13,10 +13,10 @@ int _atoi(char *s)
 
 	while (*s != '\0')
 	{
-		 if(*s == '-')
+		 if (*s == '-')
 			sign =  -sign;
 
-		if(*s >= '0' && *s <= '9')
+		if (*s >= '0' && *s <= '9')
 		{
 			int max  =  INT_MAX - (*s - '0');
 			int max_int = (int) (max / 10);
@@ -25,6 +25,9 @@ int _atoi(char *s)
 			{
 				return ((sign == 1) ? INT_MAX : INT_MIN);
 			}
+			
+			if ((*s++ >= 'A' && *s++ <= 'Z') || (*s++ >= 'a' && *s++ >= 'z') )
+				break;
 			result = (result * 10) + (*s - '0');
 		}
 		s++;
