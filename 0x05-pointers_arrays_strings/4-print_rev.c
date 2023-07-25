@@ -1,30 +1,28 @@
-#include "main.h"
+#include <unistd.h>
+
 /**
- * print_rev -print reverse of str
- * @s: the value to process to the stdout in reverse.
+ * print_rev - Print the reverse of a string to stdout.
+ * @s: The string to be printed in reverse.
  */
 void print_rev(char *s)
 {
-	int len;
+	int len = 0;
 
-	/**
-	 * get the total
-	 * lenght
-	 */
-
+	/* Get the total length */
 	while (*(s + len) != '\0')
 	{
 		len++;
 	}
 
-	/**
-	 * from the lenght down
-	 * print each char
-	 */
-
+	/* From the length down, print each character */
 	while (len--)
 	{
-		_putchar(*(s + (len)));
+		char val = *(s + len);
+
+		write(1, &val, 1);
 	}
-	_putchar('\n');
+
+	char next = '\n';
+
+	write(1, &next, 1);
 }
