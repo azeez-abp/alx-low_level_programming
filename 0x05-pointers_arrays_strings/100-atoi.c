@@ -23,7 +23,6 @@ int _atoi(char *s)
 
 		if (s[index] >= '0' && s[index] <= '9')
 		{
-			printf("%c\n", s[index]);
 
 			result = (result * 10) + (s[index] - '0');
 		}
