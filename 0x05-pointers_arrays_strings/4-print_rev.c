@@ -1,4 +1,4 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
  * print_rev - Print the reverse of a string to stdout.
@@ -17,12 +17,8 @@ void print_rev(char *s)
 	/* From the length down, print each character */
 	while (len--)
 	{
-		char val = *(s + len);
-
-		write(1, &val, 1);
+		_putchar(*(s + len));
 	}
 
-	char next = '\n';
-
-	write(1, &next, 1);
+	_putchar('\n');
 }
