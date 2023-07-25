@@ -19,7 +19,7 @@ int _atoi(char *s)
 		if(*s >= '0' && *s <= '9')
 		{
 			int max  =  INT_MAX - (*s - '0');
-			int max_int = (int) (max / 10)
+			int max_int = (int) (max / 10);
 
 			if (result > max_int)
 			{
