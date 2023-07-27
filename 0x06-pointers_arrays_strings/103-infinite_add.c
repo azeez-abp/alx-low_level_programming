@@ -1,48 +1,67 @@
 #include <stdio.h>
-#include "main.h"
 /**
- * infinite_add - Adds two numbers represented as strings.
- * @n1: The first number as a string.
- * @n2: The second number as a string.
- * @r: The buffer to store the result.
- * @size_r: The size of the buffer.
- * Return: A pointer to the result (r) if it can be stored in the buffer,
- *         otherwise returns 0.
+ * infinite_add - Add up two numbers stored in given char arrays
+ * @n1: The first number
+ * @n2: The second number
+ * @r: Pointer to the buffer to store result
+ * @size_r: The size of the buffer
+ *
+ * Return: 0 if buffer too small to store result, else return pointer to buffer
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int carry = 0;
-	int sum = 0;
-	int i = 0, j = 0, k = 0;
+	int l1, l2, tmpl, rl, i, sum, num1, num2, carry;
+	char tmp[10000];
 
-	while (n1[i] != '\0')
-		i++;
-	while (n2[j] != '\0')
-		j++;
-	if (i >= size_r || j >= size_r)
+	rl = i = l1 = l2 = sum = num1 = num2 = carry = 0;
+	while (n1[l1] != '\0')
+		l1++;
+	while (n2[l2] != '\0')
+		l2++;
+	if (l1 + 2 > size_r || l2 + 2 > size_r)
 		return (0);
-	i--;
-	j--;
-	r[size_r - 1] = '\0';
-	while (i >= 0 || j >= 0 || carry)
+	l1--;
+	l2--;
+	while (i <= l1 || i <= l2)
 	{
-		sum = carry;
-		if (i >= 0)
-			sum += (n1[i] - '0');
-		if (j >= 0)
-			sum += (n2[j] - '0');
-		carry = sum / 10;
-		r[k] = (sum % 10) + '0';
-		k++;
-		i--;
-		j--;
+		num1 = num2 = 0;
+		if (i <= l1)
+			num1 = n1[l1 - i] - '0';
+		if (i <= l2 && (l2 - i) >= 0)
+			num2 = n2[l2 - i] - '0';
+		sum = num1 + num2 + carry;
+		if (sum >= 10)
+		{
+			carry = 1;
+			sum -= 10;
+		}
+		else
+			carry = 0;
+		r[i] = sum + '0';
+		i++;
+		rl++;
 	}
-	for (i = 0, j = k - 1; i < j; i++, j--)
+	if (carry > 0)
 	{
-		char temp = r[i];
-
-		r[i] = r[j];
-		r[j] = temp;
+		r[i] = carry + '0';
+		r[i + 1] = '\0';
+	}
+	i = tmpl = 0;
+	while (i <= rl)
+	{
+		tmp[i] = r[rl - i];
+		tmpl++;
+		i++;
+	}
+	i = 0;
+	while (i < tmpl)
+	{
+		if (r[i] == '\0')
+		{
+			break;
+		}
+		r[i] = tmp[i];
+		i++;
 	}
 	return (r);
 }
