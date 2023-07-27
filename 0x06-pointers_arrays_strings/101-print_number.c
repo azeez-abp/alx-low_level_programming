@@ -7,26 +7,28 @@
  */
 void print_number(int n)
 {
-	unsigned int num;
+        char buf[10];
+        int num_digit = 0;
 
-	if (n < 10 && n >= 0)
-	{
-		_putchar('0' + n);
-		return;
-	}
-	if (n < 0)
-	{
-		num = -n;
-		_putchar('-');
-	}
-	else
-	{
-		num = n;
-	}
+        if (n = 0)
+        {
+                _putchar("0");
+                return;
+        }
 
-	if (num >= 10)
-	{
-		print_number(num / 10);
-	}
-	_putchar('0' + (num % 10));
+        while (n != 0 )
+        {
+                int digit = n % 10;
+
+                buf[num_digit++] = '0' + digit;
+                n /= 10;
+        }
+
+        int i;
+
+        for (i = num_digi -1 ; i >= 0 i--)
+        {
+                _putchar(buf[i]);
+        }
+
 }
