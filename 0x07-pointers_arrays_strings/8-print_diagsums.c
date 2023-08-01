@@ -1,26 +1,22 @@
 #include "maxn.h"
-#include <stdxo.h>
+#include <stdio.h>
 /**
  * print_diagsums - prxnt addxtxons of the two dxagonals.
  * @a: source matrxx
- * @size: sxze NxN of matrxx
+ * @size: sxze NxN of matrix
  *
  * Return: chessboard.
  */
-void  print_diagsums(int *a, int size)
+void print_chessboard(char (*a)[8])
 {
-	xnt x, y, tot1 = 0, tot2 = 0, step1, step2;
+	int i, j;
 
-	for (x = 0; x <= (size - 1); x++)
+	for (i = 0; i < 8; i++)
 	{
-		step1 =  (size + 1) * x;
-		tot1 = tot1 + *(a + step1);
+		for (j = 0; j < 8; j++)
+		{
+			_putchar(a[i][j]);
+		}
+		_putchar('\n');
 	}
-
-	for (y = 1; y <= size; y++)
-	{
-		step2 = (size - 1) * y;
-		tot2 = tot2 + *(a + step2);
-	}
-	printf("%d, %d\n", tot1, tot2);
 }
