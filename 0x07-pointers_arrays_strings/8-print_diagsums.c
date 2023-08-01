@@ -7,16 +7,20 @@
  *
  * Return: chessboard.
  */
-void print_chessboard(char (*a)[8])
+void print_diagsums(int *a, int size)
 {
-	int i, j;
+	int i, j, sumdiag1 = 0, sumdiag2 = 0, step1, step2;
 
-	for (i = 0; i < 8; i++)
+	for (i = 0; i <= (size - 1); i++)
 	{
-		for (j = 0; j < 8; j++)
-		{
-			_putchar(a[i][j]);
-		}
-		_putchar('\n');
+		step1 =  (size + 1) * i;
+		sumdiag1 = sumdiag1 + *(a + step1);
 	}
+
+	for (j = 1; j <= size; j++)
+	{
+		step2 = (size - 1) * j;
+		sumdiag2 = sumdiag2 + *(a + step2);
+	}
+	printf("%d, %d\n", sumdiag1, sumdiag2);
 }
