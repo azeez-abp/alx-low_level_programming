@@ -1,5 +1,5 @@
 #include "main.h"
-#include <sting.h>
+#include <string.h>
 /**
  * palindrome_worker - check is palindrom
  * @s:string input
