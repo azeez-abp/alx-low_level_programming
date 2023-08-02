@@ -9,10 +9,7 @@
  */
 int palindrome_worker(char *s, int i, int j)
 {
-	if (*s == 0)
-		return (1);
-
-	if (*s == '\0')
+	if (i >= j)
 		return (1);
 
 	if (s[i] != s[j])
