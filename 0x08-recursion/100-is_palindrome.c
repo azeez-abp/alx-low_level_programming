@@ -18,7 +18,7 @@ int palindrome_worker(char *s, int i, int j)
 	if (s[i] != s[j])
 		return (0);
 
-	palindrome_worker(*s, i + 1, j - 1);
+	palindrome_worker(s, i + 1, j - 1);
 }
 
 /**
