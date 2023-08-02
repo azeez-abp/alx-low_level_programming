@@ -26,7 +26,7 @@ int palindrome_worker(char *s, int i, int j)
 int is_palindrome(char *s)
 {
 	int i = 0;
-	int j  = strlen(s);
+	int j  = strlen(s) - 1;
 
 	if (palindrome_worker(s, i, j) == 1)
 		return (1);
