@@ -31,7 +31,7 @@ int is_palindrome(char *s)
 	int i = 0;
 	int j  = strlen(s);
 
-	if (palindrome_worker(*s, i, j) == 1)
+	if (palindrome_worker(s, i, j) == 1)
 		return (1);
 	else
 		return (0);
