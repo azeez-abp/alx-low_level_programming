@@ -11,34 +11,18 @@
  */
 int coinConverter(int i)
 {
-	int count = 0;
-
-	while (i != 0)
+	int coins = 0;
+	int denominations[] = {25, 10, 5, 2, 1};
+	
+	for (int i = 0; i < 5; i++) 
 	{
-		if (i % 10 == 9 || i % 10 == 7)
-			i -= 2;
-		else if (i % 25 == 0)
-			i -= 25;
-		else if (i % 10 == 0)
-			i -= 10;
-		else if (i % 5 == 0)
-			i -= 5;
-		else if (i % 2 == 0)
-		{
-			if (i % 10 == 6)
-				i -= 1;
-			else
-				i -= 2;
-		}
-		else
-			i -= 1;
-
-		count++;
+		coins += cents / denominations[i];
+		cents = cents % denominations[i];
 	}
 
-	return (count);
-}
+	return (coins);
 
+}
 /**
  * main - Takes in exactly one argument for minimum coin count
  * @argc: Number of command line arguments
