@@ -21,6 +21,7 @@
 	./start.xt 
 ```
 
+#
 - save the file
 - chmod u+x crackme3.sh
 - ./crackme3.sh
