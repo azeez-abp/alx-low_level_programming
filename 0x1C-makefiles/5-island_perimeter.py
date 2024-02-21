@@ -3,7 +3,13 @@
 
 
 def island_perimeter(grid):
-    """Returns the perimeter of the island described in grid"""
+    """Returns the perimeter of the island described in grid
+    Args:
+    grid(list): 2D representation of the islnad
+
+    Return:
+    int: represent the perimeter
+    """
     c = 0
     length = len(grid) - 1
     width = len(grid[0]) - 1
